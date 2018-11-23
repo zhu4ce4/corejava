@@ -1,9 +1,6 @@
 package IO;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 
@@ -62,9 +59,9 @@ class IOoutTest {
 }
 
 
-class Employee {
+class Employee implements Serializable {
     String name;
-    int salary;
+    double salary;
     LocalDate hireDate;
 
     public Employee(String aname, int asalary, int ayear, int amonth, int aday) {
@@ -73,7 +70,25 @@ class Employee {
         hireDate = LocalDate.of(ayear, amonth, aday);
     }
 
+    public void raiseSalary(double percentOfRaise) {
+        salary *=(1.0 + percentOfRaise / 100.0);
+    }
+
     public String toString() {
-        return name + ":" + salary + ":" + hireDate;
+        return name + ":\t" + salary + ":\t" + hireDate;
+    }
+}
+
+class Manager extends Employee {
+    private Employee secretary;
+    public Manager(String aname, int asalary, int ayear, int amonth, int aday) {
+        super(aname, asalary, ayear, amonth, aday);
+    }
+
+    public void setSecretary(Employee asecretary) {
+        secretary = asecretary;
+    }
+    public String toString() {
+        return name + ":\t" + salary + ":\t" + hireDate+":secretary:"+secretary.name;
     }
 }
