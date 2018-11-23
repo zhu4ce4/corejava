@@ -63,6 +63,11 @@ class Employee implements Serializable {
     String name;
     double salary;
     LocalDate hireDate;
+    String department="AI comp";    //当前版本增加了一个域数据(在被读入的版本中没有该域数据),对象会被赋值为null,数字为0,boolean值为false;
+    //反之,若当前版无该数据域，被读入的旧版本有该数据域，该数据域会被忽略；若当前版本及被读入的版本的数据域存在名字匹配而类型不匹配，
+    // 则不兼容，不会尝试进行类型转换
+    public static final long serialVersionUID = 1;  //要尝试读入旧版本，需指定旧版本类的uid；若不进行显式指定uid系统会自动计算出一个
+//    public static final long serialVersionUID = 2;    //显式修改uid导致不能读入之前存储的对象数据
 
     public Employee(String aname, int asalary, int ayear, int amonth, int aday) {
         name = aname;
@@ -89,6 +94,9 @@ class Manager extends Employee {
         secretary = asecretary;
     }
     public String toString() {
-        return name + ":\t" + salary + ":\t" + hireDate+":secretary:"+secretary.name;
+        return department+":"+name + ":\t" + salary + ":\t" + hireDate+":secretary:"+secretary.name;
+//        return name + ":\t" + salary + ":\t" + hireDate+":secretary:"+secretary.name;
+//        return name + ":\t" + salary + ":\t" + hireDate+":secretary:"+secretary.name+"after";   //如果这个类只有方法产生了
+        // 变化,那么在读入新对象数据时不会有任何问题
     }
 }

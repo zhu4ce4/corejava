@@ -20,10 +20,10 @@ public class IOOBJ {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("employee.txt"))) {
             Employee[] newstaffes = (Employee[]) ois.readObject();
             newstaffes[0].raiseSalary(10);
-
             for (Employee staff : newstaffes) {
                 System.out.println(staff);
             }
