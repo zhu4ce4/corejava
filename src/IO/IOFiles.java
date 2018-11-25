@@ -6,7 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
-public class IOFILES {
+public class IOFiles {
     public static void main(String[] args) {
         Path p = Paths.get(System.getProperty("user.dir"), "IOTEST/SRC/test.txt");
         Path notexists = Paths.get(System.getProperty("user.dir"), "IOTEST/SRC/notexists/notexists.txt");

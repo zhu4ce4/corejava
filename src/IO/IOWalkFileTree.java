@@ -5,7 +5,7 @@ import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 
 //通过walk打印文件夹文件名称（含子孙目录）打印层次结构
-class IOFILESWALK {
+class IOWalkFileTree {
     public static void main(String[] args) {
         try {
             getWalk(Paths.get("D:\\project\\corejava\\IOTEST"));

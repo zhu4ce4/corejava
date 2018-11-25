@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-class RegexTest {
+public class RegexTest {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("输入pattern");

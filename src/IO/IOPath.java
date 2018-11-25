@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
 
-public class IOPATH {
+public class IOPath {
     public static void main(String[] args) {
         Path abs = Paths.get("d:/project/corejava/IOTEST/SRC");
         System.out.println(abs);

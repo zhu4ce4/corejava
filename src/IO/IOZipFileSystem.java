@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 
-public class IOZIPFILESYSTEM {
+public class IOZipFileSystem {
     public static void main(String[] args) {
 
         try (FileSystem fs = FileSystems.newFileSystem(Paths.get("IOZIPTEST.zip"), null)) {
