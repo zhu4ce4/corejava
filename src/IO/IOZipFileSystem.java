@@ -21,7 +21,7 @@ public class IOZipFileSystem {
         String zipname = "D:\\project\\corejava\\IOZIPTEST.zip";
         try (FileSystem fss = FileSystems.newFileSystem(Paths.get(zipname), null)) {
             Files.copy(fss.getPath("IOTEST\\SRC\\test.txt"), Paths.get("D:\\project\\corejava\\IOTEST\\SRC\\notexists\\new\\newtwo\\tt.txt"));
-            //通过复制解压缩
+            //ͨ�����ƽ�ѹ��
         } catch (IOException ee) {
             ee.printStackTrace();
         }
